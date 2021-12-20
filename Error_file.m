@@ -16,7 +16,9 @@ standard=[8.37 3.95 7.79 4.44 11.06 7.58 7.33 7.70 0.86 0.93;
                                                                                                                                       % blood data;
                                                                                                                                       % peritoneum data]
 
-data = tptvals;
+tpts=[24 36 48 60 72 84 96 120 144 168]; % timepoints at wich the percentage data were collected (in hours)
+
+
 %get parameters____________________________________________________________
 inipar = parameters;
 n=floor(inipar(1)); % number of divisions before EDU detection fails
@@ -46,16 +48,11 @@ y2=sum(mature,2);
 y3=y(:,3+n+h);
 y4=y(:,4+n+h);
 
-tpts=[24 36 48 60 72 84 96 120 144 168]; % timepoints at wich the percentage data were collected (in hours)
-
-tptvals=data;
 
 %calculating RMSD__________________________________________________________
 p1=interp1(t,y2,tpts);
 p2=interp1(t,y3,tpts);
 p3=interp1(t,y4,tpts);
-
-%RMSD=sqrt(sum( ((p1-tptvals(1,:))).^2     +   ((p2-tptvals(2,:))).^2   +     ((p3-tptvals(3,:))).^2));
 
 RMSD=sum( ((p1-tptvals(1,:))./standard(1,:)).^2     +   ((p2-tptvals(2,:))./standard(2,:)).^2   +     ((p3-tptvals(3,:))./standard(3,:)).^2); % chi square estimation
     
