@@ -1,6 +1,6 @@
 # Neutrophil-kinetics_genetic-algorithm
 
-parameters in the model are optimized minimizing chisquared value 
+Parameters in the model are optimized, minimizing chisquared value 
 
 Genetic algorithm available in optimization toolbox in matlab is used for this optimization procedure.
 
