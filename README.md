@@ -12,4 +12,4 @@ The parameter sets are stored in the "parameters" variable (2500X8), where each 
 
 At the end of the run, "parameters" variable in the workspace is the output file to be used for further analysis of parameter distributions.
 
-To change the neutrophil percentage data, goto "errorfile.m" and follow the data structure as specified in comments. (line 3 to 19)
+If the user has a different set of data,to get new estimates of parameter distributions, change the neutrophil percentage data in "errorfile.m" (line 3 to 19). Follow the data structure as specified in comments. After updating the data, run the "runga.m" and access outputs as described above.
